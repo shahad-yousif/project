@@ -1,0 +1,12 @@
+%table.table
+  %thead
+    %tr
+      %th Name
+      %th Date Of Birth
+      %th Phone Number
+  %tbody
+    - @people.each do |person|
+      %tr
+        %td= person.name
+        %td= person.date_of_birth
+        %td= person.phone_number
