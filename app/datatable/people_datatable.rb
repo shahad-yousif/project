@@ -21,7 +21,8 @@ private
       [
         pl.name,
         pl.date_of_birth,
-        pl.phone_number
+        pl.phone_number,
+        pl.status
       ]
     end
   end
