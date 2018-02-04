@@ -1,12 +1,14 @@
 %table.table
   %thead
     %tr
-      %th Name
-      %th Date Of Birth
-      %th Phone Number
+      %th First Name
+      %th Last Name
+      %th Gender
+      %th Email
   %tbody
-    - @people.each do |person|
+    - @people.profiles.each do |person|
       %tr
-        %td= person.name
-        %td= person.date_of_birth
-        %td= person.phone_number
+        %td= person.first_name
+        %td= person.last_name
+        %td= person.gender
+        %td= person.email

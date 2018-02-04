@@ -1,0 +1,22 @@
+%p#notice= notice
+%p
+  %strong First name:
+  = @profile.first_name
+%p
+  %strong Last name:
+  = @profile.last_name
+%p
+  %strong Gender:
+  = @profile.gender
+%p
+  %strong Email:
+  = @profile.email
+%p
+  %strong Person:
+  = @profile.person_id
+%p
+  %strong Status:
+  = @profile.status
+= link_to 'Edit', edit_profile_path(@profile)
+|
+= link_to 'Back', profiles_path

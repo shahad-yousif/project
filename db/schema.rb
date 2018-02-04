@@ -24,13 +24,17 @@ ActiveRecord::Schema.define(version: 20180201160136) do
     t.string "name"
     t.string "date_of_birth"
     t.string "phone_number"
-    t.boolean "status", default: true
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
   end
 
   create_table "profiles", force: :cascade do |t|
     t.integer "person_id"
+    t.string "first_name"
+    t.string "last_name"
+    t.string "gender"
+    t.string "email"
+    t.boolean "status", default: true
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
   end

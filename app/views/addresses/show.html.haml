@@ -1,0 +1,13 @@
+%p#notice= notice
+%p
+  %strong Country:
+  = @address.country
+%p
+  %strong City:
+  = @address.city
+%p
+  %strong Person:
+  = @address.person_id
+= link_to 'Edit', edit_address_path(@address)
+|
+= link_to 'Back', addresses_path

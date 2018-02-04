@@ -10,7 +10,7 @@
     .pos-f-t
       #navbarToggleExternalContent.collapse
         .bg-dark.p-4
-          %nav.navbar.navbar-expand-lg.navbar-light.bg-light
+          %nav.navbar.navbar-expand-lg.navbar-dark.bg-dark
             %a.navbar-brand{:href => "#"} Navbar
             %button.navbar-toggler{"aria-controls" => "navbarSupportedContent", "aria-expanded" => "false", "aria-label" => "Toggle navigation", "data-target" => "#navbarSupportedContent", "data-toggle" => "collapse", :type => "button"}
               %span.navbar-toggler-icon
@@ -39,12 +39,38 @@
       %nav.navbar.navbar-dark.bg-dark
         %button.navbar-toggler{"aria-controls" => "navbarToggleExternalContent", "aria-expanded" => "false", "aria-label" => "Toggle navigation", "data-target" => "#navbarToggleExternalContent", "data-toggle" => "collapse", :type => "button"}
           %span.navbar-toggler-icon
+    
+    .row
+      .col-lg-12
+        #carouselExampleIndicators.carousel.slide{"data-ride" => "carousel"}
+          %ol.carousel-indicators
+            %li.active{"data-slide-to" => "0", "data-target" => "#carouselExampleIndicators"}
+            %li{"data-slide-to" => "1", "data-target" => "#carouselExampleIndicators"}
+            %li{"data-slide-to" => "2", "data-target" => "#carouselExampleIndicators"}
+          .carousel-inner
+            .carousel-item.active
+              %img.d-block.w-100{:alt => "First slide", :src => "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTsSmTD1OCVGOjEU7AmXnr9Sgrjt5O4rSRt691nFI4oo6i9Yjgh"}/
+            .carousel-item
+              %img.d-block.w-100{:alt => "Second slide", :src => "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTsSmTD1OCVGOjEU7AmXnr9Sgrjt5O4rSRt691nFI4oo6i9Yjgh"}/
+            .carousel-item
+              %img.d-block.w-100{:alt => "Third slide", :src => "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTsSmTD1OCVGOjEU7AmXnr9Sgrjt5O4rSRt691nFI4oo6i9Yjgh"}/
+          %a.carousel-control-prev{"data-slide" => "prev", :href => "#carouselExampleIndicators", :role => "button"}
+            %span.carousel-control-prev-icon{"aria-hidden" => "true"}
+            %span.sr-only Previous
+          %a.carousel-control-next{"data-slide" => "next", :href => "#carouselExampleIndicators", :role => "button"}
+            %span.carousel-control-next-icon{"aria-hidden" => "true"}
+            %span.sr-only Next
 
-    %table#person.display{data: {source: people_url(format: 'json')}}
-      %thead
-        %tr
-          %th Name
-          %th Date Of Birth
-          %th Phone Number
-          %th Status
-      %tbody
+
+    .row
+      .col-lg-12
+        %table#person.display{data: {source: people_url(format: 'json')}}
+          %thead
+            %tr
+              %th Name
+              %th Date Of Birth
+              %th Phone Number
+          %tbody
+
+%script
+  $('.carousel').carousel()    
