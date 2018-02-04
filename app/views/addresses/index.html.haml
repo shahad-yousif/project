@@ -13,8 +13,8 @@
         %td= address.country
         %td= address.city
         %td= address.person_id
-        %td= link_to 'Show', address
-        %td= link_to 'Edit', edit_address_path(address)
-        %td= link_to 'Destroy', address, method: :delete, data: { confirm: 'Are you sure?' }
+        %td= link_to 'Show', address, class:"btn btn-outline-secondary"
+        %td= link_to 'Edit', edit_address_path(address), class:"btn btn-outline-secondary"
+        %td= link_to 'Destroy', address, method: :delete, data: { confirm: 'Are you sure?' }, class:"btn btn-outline-danger"
 %br/
 = link_to 'New Address', new_address_path, class:"btn btn-outline-secondary"

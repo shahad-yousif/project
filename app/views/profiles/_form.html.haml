@@ -12,22 +12,35 @@
     .card
       .card-body
         
-        .field
-          = form.label :first_name
-          = form.text_field :first_name, id: :profile_first_name
-        .field
-          = form.label :last_name
-          = form.text_field :last_name, id: :profile_last_name
-        .field
-          = form.label :gender
-          = form.text_field :gender, id: :profile_gender
-        .field
-          = form.label :email
-          = form.text_field :email, id: :profile_email
-        .field
-          = form.label :person_id
-          = form.collection_select :person_id, Person.order(:name),:id,:name
-        .field
+        .form-group.row
+          .col-sm-8
+            %input#text.form-control{:placeholder => "First Name", :type => "name"}/
+
+        .form-group.row
+          .col-sm-8
+            %input#text.form-control{:placeholder => "Last Name", :type => "name"}/
+
+        .form-group.row
+          .col-sm-8
+            %input#exampleInputEmail1.form-control{"aria-describedby" => "emailHelp", :placeholder => "Enter email", :type => "email"}/
+            %small#emailHelp.form-text.text-muted We'll never share your email with anyone else.
+
+        .form-group.row
+          %label.col-sm-2.col-form-label{for: "text"} Person
+          .col-sm-10
+            = form.collection_select :person_id, Person.order(:name),:id,:name, class: "form-control"
+
+        .form-group
+          = form.label :Gender
+          %br
+          .form-check.form-check-inline
+            %input#inlineCheckbox1.form-check-input{type: "checkbox", value: "option1"}/
+            %label.form-check-label{for: "inlineCheckbox1"} Female
+          .form-check.form-check-inline
+            %input#inlineCheckbox2.form-check-input{type: "checkbox", value: "option2"}/
+            %label.form-check-label{for: "inlineCheckbox2"} Male
+
+        .form-group
           = form.label :status
           %br
           .form-check.form-check-inline
@@ -37,4 +50,5 @@
             %input#inlineCheckbox2.form-check-input{type: "checkbox", value: "option2"}/
             %label.form-check-label{for: "inlineCheckbox2"} Inactive
         .actions
-          = form.submit
+          = form.submit"create profile", class:"btn btn-outline-secondary"
+          = link_to 'Back', profiles_path, class:"btn btn-outline-secondary"

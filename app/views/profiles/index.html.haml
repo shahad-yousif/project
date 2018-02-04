@@ -23,8 +23,8 @@
             %input{checked: 'checked',class: 'profile_check', id: profile.id, data: { toggle: 'toggle', off: 'inactive', on: 'active'}, onclick: "change_status(#profile.id)", type: 'checkbox'}
           - else
             %input{ data: { toggle: 'toggle', off: 'inactive', on: 'active'}, class: 'profile_check', id: "#{profile.id}", onclick: "change_status(#profile.id)", type: 'checkbox'}
-        %td= link_to 'Show', profile
-        %td= link_to 'Edit', edit_profile_path(profile)
-        %td= link_to 'Destroy', profile, method: :delete, data: { confirm: 'Are you sure?' }
+        %td= link_to 'Show', profile, class:"btn btn-outline-secondary"
+        %td= link_to 'Edit', edit_profile_path(profile), class:"btn btn-outline-secondary"
+        %td= link_to 'Destroy', profile, method: :delete, data: { confirm: 'Are you sure?' }, class:"btn btn-outline-danger"
 %br/
-= link_to 'New Profile', new_profile_path
+= link_to 'New Profile', new_profile_path, class:"btn btn-outline-secondary"

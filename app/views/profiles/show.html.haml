@@ -17,6 +17,5 @@
 %p
   %strong Status:
   = @profile.status
-= link_to 'Edit', edit_profile_path(@profile)
-|
-= link_to 'Back', profiles_path
+= link_to 'Edit', edit_profile_path(@profile), class:"btn btn-outline-secondary"
+= link_to 'Back', profiles_path, class:"btn btn-outline-secondary"
