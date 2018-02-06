@@ -6,26 +6,56 @@
     %meta{:charset => "utf-8"}/
     %meta{:content => "width=device-width, initial-scale=1, shrink-to-fit=no", :name => "viewport"}/
   %body
-    
 
-    #carouselExampleIndicators.carousel.slide{"data-ride" => "carousel"}
-      %ol.carousel-indicators
-        %li.active{"data-slide-to" => "0", "data-target" => "#carouselExampleIndicators"}
-        %li{"data-slide-to" => "1", "data-target" => "#carouselExampleIndicators"}
-        %li{"data-slide-to" => "2", "data-target" => "#carouselExampleIndicators"}
-      .carousel-inner
-        .carousel-item.active
-          %img.d-block.w-100{:alt => "First slide", :src => "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTsSmTD1OCVGOjEU7AmXnr9Sgrjt5O4rSRt691nFI4oo6i9Yjgh"}
-        .carousel-item
-          %img.d-block.w-100{:alt => "Second slide", :src => "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTsSmTD1OCVGOjEU7AmXnr9Sgrjt5O4rSRt691nFI4oo6i9Yjgh"}/
-        .carousel-item
-          %img.d-block.w-100{:alt => "Third slide", :src => "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTsSmTD1OCVGOjEU7AmXnr9Sgrjt5O4rSRt691nFI4oo6i9Yjgh"}/
-      %a.carousel-control-prev{"data-slide" => "prev", :href => "#carouselExampleIndicators", :role => "button"}
-        %span.carousel-control-prev-icon{"aria-hidden" => "true"}
-        %span.sr-only Previous
-      %a.carousel-control-next{"data-slide" => "next", :href => "#carouselExampleIndicators", :role => "button"}
-        %span.carousel-control-next-icon{"aria-hidden" => "true"}
-        %span.sr-only Next
+    %nav.navbar.navbar-expand-lg.navbar-light
+      %a.navbar-brand{href: "#"} 
+        %span Elite
+        %span Corp
+
+      %button.navbar-toggler{"aria-controls" => "navbarSupportedContent", "aria-expanded" => "false", "aria-label" => "Toggle navigation", "data-target" => "#navbar", "data-toggle" => "collapse", type: "button"}
+        %span.navbar-toggler-icon
+      #navbar.collapse.navbar-collapse
+        %ul.navbar-nav.ml-auto
+          %li.nav-item.active
+            %a.nav-link{href: "#"}
+              Home
+              %span.sr-only (current)
+          %li.nav-item
+            %a.nav-link{href: "#"} About
+
+          %li.nav-item
+            %a.nav-link{href: "#"} Work
+          
+          %li.nav-item
+            %a.nav-link{href: "#"} Blog
+
+          %li.nav-item
+            %a.nav-link{href: "#"} Contact      
+          
+    
+    .slider
+      #carouselExampleIndicators.carousel.slide{"data-ride" => "carousel"}
+        %ol.carousel-indicators
+          %li.active{"data-slide-to" => "0", "data-target" => "#carouselExampleIndicators"}
+          %li{"data-slide-to" => "1", "data-target" => "#carouselExampleIndicators"}
+          %li{"data-slide-to" => "2", "data-target" => "#carouselExampleIndicators"}
+        .carousel-inner
+          %h1 
+            We're an Independent
+            %br
+            Design and  
+            %span>   Development
+            %br 
+            Agency
+          .overlay
+
+          .carousel-item.active
+            %img.d-block.w-100{:alt => "First slide", :src => "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcS8sTYV7AO0Fy1F8cfJ7itcRpXuAJlz_7z3_U3UCLKWfHp4LmQi"}
+          .carousel-item
+            %img.d-block.w-100{:alt => "Second slide", :src => "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcS8sTYV7AO0Fy1F8cfJ7itcRpXuAJlz_7z3_U3UCLKWfHp4LmQi"}/
+          .carousel-item
+            %img.d-block.w-100{:alt => "Third slide", :src => "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcS8sTYV7AO0Fy1F8cfJ7itcRpXuAJlz_7z3_U3UCLKWfHp4LmQi"}/
+
 
 
 
