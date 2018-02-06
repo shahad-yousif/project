@@ -8,4 +8,5 @@ jQuery ->
     bJQueryUI: true
     bProcessing: true
     bServerSide: true
+    responsive: true
     sAjaxSource: $('#person').data('source')

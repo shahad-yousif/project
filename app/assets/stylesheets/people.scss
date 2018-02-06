@@ -1,3 +1,92 @@
 // Place all the styles related to the people controller here.
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
+
+body
+{
+
+}
+
+.navbar-dark .navbar-nav .show > .nav-link, .navbar-dark 
+.navbar-nav .active > .nav-link, .navbar-dark .navbar-nav 
+.nav-link.show, .navbar-dark .navbar-nav .nav-link.active
+
+{
+  background-color: #E41B17;
+}
+
+.navbar-expand-lg .navbar-nav .dropdown-menu
+{
+  background-color: #212529;
+  border: 3px solid #E41B17;
+  padding: 6px 20px;
+  min-width: 200px;
+
+}
+
+.navbar-expand-lg .navbar-nav .dropdown-menu .dropdown-item
+{
+  color: #FFF;
+   
+}
+
+.container .dropdown .dropdown-menu .dropdown-item
+{
+
+ webkit-transition: padding 0.2s ease;
+  moz-transition: padding 0.2s ease;
+  o-transition: padding 0.2s ease;
+  transition: padding 0.2s ease; 
+}
+
+.container .dropdown .dropdown-menu a:hover
+{
+  color: #fff;
+  background-color: #E41B17;
+  border-color: #fff;
+  padding-left: 30px;
+  
+}
+
+.about 
+{
+  padding-top:60px;
+  padding-bottom:60px;
+  background-color: #efefef;
+}
+
+.par
+{
+  padding:50px;
+}
+
+#person
+{
+  padding:50px;
+}
+
+.features
+{
+  background-color: #EEE;
+  padding:50px;
+}
+
+.features .feat p
+{
+  line-height:2em;
+}
+
+.features .feat img
+{
+  background-color: pink;
+  height: 200px;
+  width: 50%;
+}
+
+.footer
+{
+  background-color: #212529;
+  color:white;
+  padding-top:100px;
+  padding-bottom:100px;
+}
