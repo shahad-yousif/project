@@ -24,5 +24,13 @@ $(document).on('turbolinks:load', function() {
   $(".alert" ).fadeOut(3000);  
   });
 
+$(document).ready(function() {
+  $('select#placeholder-example').select2({
+    placeholder: "Choose a person",
+    allowClear: true
+  });
+});
+
+
 
 

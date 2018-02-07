@@ -35,4 +35,11 @@
 
 
       #flash_hook
+      .text-center
+        - flash.each do |key, value|
+        - alert_class = flash[:notice] ? 'success' : 'danger'
+          %div{class: "alert alert-#{alert_class}"}
+            %button.close{aria_label: 'Close', data: {dismiss: 'alert'}, type: 'button'}
+              %span{aria_hidden: 'true'} ×
+            = value
       = yield
