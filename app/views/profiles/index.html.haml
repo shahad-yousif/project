@@ -20,7 +20,7 @@
         %td= profile.person_id
         %td
           - if profile.status
-            %input{checked: 'checked',class: 'profile_check', id: profile.id, data: { toggle: 'toggle', off: 'inactive', on: 'active'}, onclick: "change_status(#profile.id)", type: 'checkbox'}
+            %input{checked: 'checked',class: 'profile_check', id: profile.id, data: { toggle: 'toggle', off: 'deactivated', on: 'activated'}, onclick: "change_status(#profile.id)", type: 'checkbox'}
           - else
             %input{ data: { toggle: 'toggle', off: 'inactive', on: 'active'}, class: 'profile_check', id: "#{profile.id}", onclick: "change_status(#profile.id)", type: 'checkbox'}
         %td= link_to 'Show', profile, class:"btn btn-outline-secondary"
