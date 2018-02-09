@@ -18,4 +18,5 @@
 //= require bootstrap-sprockets
 //= require bootstrap-toggle
 //= require datatables/jquery_datatables
+//= require select2
 //= require_tree .

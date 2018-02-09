@@ -20,7 +20,7 @@
         .form-group.row
           %label.col-sm-2.col-form-label{for: "text"} Person
           .col-sm-10
-            = form.collection_select :person_id, Person.order(:name),:id,:name, class: "form-control", id: "placeholder-example"
+            = form.collection_select :person_id, Person.order(:name),:id,:name, class: "form-control", id: "dropdown"
 
         .form-group
           = form.label :Gender

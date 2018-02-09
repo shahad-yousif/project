@@ -102,12 +102,18 @@ body
   cursor: pointer;
 }
 
+.datatable
+{
+  
+  padding: 30px;
+}
+
 .features
 {
   padding: 50px 0;
 }
 
-.features i
+.features  i
 {
   background-color: #ec1c23;
   color: #FFF;
@@ -210,8 +216,7 @@ body
 
 .footer .site-info a:before
 {
-  font-family: 'FontAwesome';
-  content: '/f138';
+
   display: inline-block;
   margin-right: 5px;
 
@@ -229,8 +234,7 @@ body
 
 .footer .helpful-links ul li:before
 {
-  font-family: 'FontAwesome';
-  content: '/f054';
+
   margin-right: 5px;
   color: #08526d;
   font-size: 12px;
