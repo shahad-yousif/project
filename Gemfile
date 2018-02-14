@@ -39,4 +39,5 @@ gem 'datatables-rails'
 gem 'will_paginate'
 gem 'bootstrap-toggle-rails'
 gem 'devise'
-gem 'omniauth-azure-oauth2'
+
+

@@ -10,7 +10,7 @@ class ProfilesController < ApplicationController
     profile = Profile.find( params[:id])
     profile.active = !profile.active
     if profile.save
-      flash[:notice] = "#{profile.first_name} has been #{profile.status ? 'activated' : 'deactivated'}"
+      flash[:notice] = "#{profile.first_name} has been #{profile.active ? 'activated' : 'deactivated'}"
     else
       flash[:error]= profile.errors.full_messages.to_sentence
     end
@@ -32,35 +32,28 @@ class ProfilesController < ApplicationController
   def create
     @profile = Profile.new(profile_params)
 
-    respond_to do |format|
       if @profile.save
-        format.html { redirect_to @profile, notice: 'Profile was successfully created.' }
-        format.json { render :show, status: :created, location: @profile }
+        flash[:notice] = 'Profile was successfully created.'
+        redirect_to @profile
       else
-        format.html { render :new }
-        format.json { render json: @profile.errors, status: :unprocessable_entity }
+        flash[:error]= @profile.errors.full_messages.to_sentence
+        redirect_to new_profile_path
       end
-    end
   end
 
   def update
-    respond_to do |format|
       if @profile.update(profile_params)
-        format.html { redirect_to @profile, notice: 'Profile was successfully updated.' }
-        format.json { render :show, status: :ok, location: @profile }
+        flash[:notice] = 'Profile was successfully updated.'
+        redirect_to @profile
       else
-        format.html { render :edit }
-        format.json { render json: @profile.errors, status: :unprocessable_entity }
+        flash[:error]= @profile.errors.full_messages.to_sentence
+        redirect_to edit_profile_path
       end
-    end
   end
 
   def destroy
     @profile.destroy
-    respond_to do |format|
-      format.html { redirect_to profiles_url, notice: 'Profile was successfully destroyed.' }
-      format.json { head :no_content }
-    end
+      flash[:notice] = 'Profile was successfully destroyed.'
   end
 
   private
@@ -69,6 +62,6 @@ class ProfilesController < ApplicationController
     end
 
     def profile_params
-      params.require(:profile).permit(:first_name, :last_name, :gender, :email, :person_id)
+      params.require(:profile).permit(:first_name, :last_name, :gender, :email, :person_id, :active)
     end
 end

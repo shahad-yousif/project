@@ -19,10 +19,10 @@
         %td= profile.email
         %td= profile.person_id
         %td
-          - if profile.status
+          - if profile.active
             %input{checked: 'checked',class: 'profile_check', id: profile.id, data: { toggle: 'toggle', off: 'deactivated', on: 'activated'}, onclick: "change_status(#profile.id)", type: 'checkbox'}
           - else
-            %input{ data: { toggle: 'toggle', off: 'inactive', on: 'active'}, class: 'profile_check', id: "#{profile.id}", onclick: "change_status(#profile.id)", type: 'checkbox'}
+            %input{ data: { toggle: 'toggle', off: 'deactivated', on: 'activated'}, class: 'profile_check', id: "#{profile.id}", onclick: "change_status(#profile.id)", type: 'checkbox'}
         %td= link_to 'Show', profile, class:"btn btn-outline-secondary"
         %td= link_to 'Edit', edit_profile_path(profile), class:"btn btn-outline-secondary"
         %td= link_to 'Destroy', profile, method: :delete, data: { confirm: 'Are you sure?' }, class:"btn btn-outline-danger"

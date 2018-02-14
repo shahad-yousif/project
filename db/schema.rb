@@ -34,7 +34,7 @@ ActiveRecord::Schema.define(version: 20180209134803) do
     t.string "last_name"
     t.string "gender"
     t.string "email"
-    t.boolean "status", default: true
+    t.boolean "active", default: true
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
   end

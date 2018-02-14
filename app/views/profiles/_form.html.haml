@@ -20,7 +20,7 @@
         .form-group.row
           %label.col-sm-2.col-form-label{for: "text"} Person
           .col-sm-10
-            = form.collection_select :person_id, Person.order(:name),:id,:name, class: "form-control", id: "dropdown"
+            = form.collection_select :person_id, Person.order(:name),:id,:name, class: "form-control", include_blank: true
 
         .form-group
           = form.label :Gender
@@ -44,3 +44,6 @@
         .actions
           = form.submit"create profile", class:"btn btn-outline-secondary"
           = link_to 'Back', profiles_path, class:"btn btn-outline-secondary"
+
+:javascript
+  $('select').select2(); 

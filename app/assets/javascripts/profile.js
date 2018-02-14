@@ -1,10 +1,5 @@
+
 $(document).on('turbolinks:load', function() {
-  $('.profile_check').change(function() {
-    $.ajax({
-      url: 'profiles/' + this.id + '/change_status/',
-      type: 'post'
-    });
-  });
 
   $(document).ajaxComplete(function(event, request) {
     var alert_type, msg;
@@ -26,8 +21,10 @@ $(document).on('turbolinks:load', function() {
 
 });
 
-$( "#dropdown" ).select2({
-    theme: "bootstrap"
+
+
+$(document).ready(function() {
+  $('.js-example-basic-single').select2()
 });
 
 

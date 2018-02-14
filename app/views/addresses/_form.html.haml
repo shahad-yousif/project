@@ -23,8 +23,11 @@
         .form-group.row
           %label.col-sm-2.col-form-label{for: "text"} Person
           .col-sm-10
-            = form.collection_select :person_id, Person.order(:name),:id,:name, class: "form-control"
+            = form.collection_select :person_id, Person.order(:name),:id,:name, class: "form-control", include_blank: true
 
         .actions
           = form.submit"create address", class:"btn btn-outline-secondary"
           = link_to 'Back', addresses_path, class:"btn btn-outline-secondary"
+
+:javascript
+  $('select').select2();          
