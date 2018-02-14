@@ -1,0 +1,12 @@
+= form_for @person do |form|
+  .field
+    = form.label :name
+    = form.text_field :name, id: :person_name
+  .field
+    = form.label :date_of_birth
+    = form.text_field :date_of_birth, id: :person_date_of_birth
+  .field
+    = form.label :phone_number
+    = form.text_field :phone_number, id: :person_phone_number
+  .actions
+    = form.submit

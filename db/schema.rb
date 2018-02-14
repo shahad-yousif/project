@@ -24,6 +24,7 @@ ActiveRecord::Schema.define(version: 20180209134803) do
     t.string "name"
     t.string "date_of_birth"
     t.string "phone_number"
+    t.integer "user_id"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
   end

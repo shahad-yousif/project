@@ -59,8 +59,8 @@
 
 
     .datatable
-      %table#person.display{data: {source: people_url(format: 'json')}}
-        %thead
+      %table.table.table-striped.table-bordered.table-hover#person.display{data: {source: people_url(format: 'json')}}
+        %thead.thead-dark
           %tr
             %th Name
             %th Date Of Birth

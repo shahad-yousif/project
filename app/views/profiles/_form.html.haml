@@ -1,49 +1,49 @@
 = form_for @profile do |form|
   .row
-  .col-sm-6
-    .card
-      .card-body
-        
-        .form-group.row
-          .col-sm-8
-            %input#text.form-control{:placeholder => "First Name", :type => "name"}/
+    .col-sm-6
+      .card
+        .card-body
+          
+          .form-group.row
+            .col-sm-8
+              = form.text_field :first_name, placeholder: "First Name", class: 'form-control'
 
-        .form-group.row
-          .col-sm-8
-            %input#text.form-control{:placeholder => "Last Name", :type => "name"}/
+          .form-group.row
+            .col-sm-8
+              = form.text_field :last_name, placeholder: "Last Name", class: 'form-control'
 
-        .form-group.row
-          .col-sm-8
-            %input#exampleInputEmail1.form-control{"aria-describedby" => "emailHelp", :placeholder => "Enter email", :type => "email"}/
-            %small#emailHelp.form-text.text-muted We'll never share your email with anyone else.
+          .form-group.row
+            .col-sm-8
+              = form.email_field :email, placeholder: "Enter email", class: 'form-control'
+              %small#emailHelp.form-text.text-muted We'll never share your email with anyone else.
 
-        .form-group.row
-          %label.col-sm-2.col-form-label{for: "text"} Person
-          .col-sm-10
-            = form.collection_select :person_id, Person.order(:name),:id,:name, class: "form-control", include_blank: true
+          .form-group.row
+            %label.col-sm-2.col-form-label{for: "text"} Person
+            .col-sm-10
+              = form.collection_select :person_id, Person.order(:name),:id,:name, class: "form-control", include_blank: true
 
-        .form-group
-          = form.label :Gender
-          %br
-          .form-check.form-check-inline
-            %input#inlineCheckbox1.form-check-input{type: "checkbox", value: "option1"}/
-            %label.form-check-label{for: "inlineCheckbox1"} Female
-          .form-check.form-check-inline
-            %input#inlineCheckbox2.form-check-input{type: "checkbox", value: "option2"}/
-            %label.form-check-label{for: "inlineCheckbox2"} Male
+          .form-group
+            = form.label :Gender
+            %br
+            .form-check.form-check-inline
+              %input#inlineCheckbox1.form-check-input{type: "checkbox", value: "option1"}/
+              %label.form-check-label{for: "inlineCheckbox1"} Female
+            .form-check.form-check-inline
+              %input#inlineCheckbox2.form-check-input{type: "checkbox", value: "option2"}/
+              %label.form-check-label{for: "inlineCheckbox2"} Male
 
-        .form-group
-          = form.label :status
-          %br
-          .form-check.form-check-inline
-            %input#inlineCheckbox1.form-check-input{type: "checkbox", value: "option1"}/
-            %label.form-check-label{for: "inlineCheckbox1"} Active
-          .form-check.form-check-inline
-            %input#inlineCheckbox2.form-check-input{type: "checkbox", value: "option2"}/
-            %label.form-check-label{for: "inlineCheckbox2"} Inactive
-        .actions
-          = form.submit"create profile", class:"btn btn-outline-secondary"
-          = link_to 'Back', profiles_path, class:"btn btn-outline-secondary"
+          .form-group
+            = form.label :status
+            %br
+            .form-check.form-check-inline
+              %input#inlineCheckbox1.form-check-input{type: "checkbox", value: "option1"}/
+              %label.form-check-label{for: "inlineCheckbox1"} Active
+            .form-check.form-check-inline
+              %input#inlineCheckbox2.form-check-input{type: "checkbox", value: "option2"}/
+              %label.form-check-label{for: "inlineCheckbox2"} Inactive
+          .actions
+            = form.submit"create profile", class:"btn btn-outline-secondary"
+            = link_to 'Back', profiles_path, class:"btn btn-outline-secondary"
 
 :javascript
   $('select').select2(); 

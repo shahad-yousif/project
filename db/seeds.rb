@@ -8,7 +8,8 @@
 100.times do
   people = Person.create!(name: Faker::Name.name,
     date_of_birth: Faker::Date.between(2.days.ago, Date.today),
-    phone_number: Faker::PhoneNumber.phone_number)
+    phone_number: Faker::PhoneNumber.phone_number
+    )
 end
 
 

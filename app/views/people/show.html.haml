@@ -1,14 +1,12 @@
-%table.table
-  %thead
-    %tr
-      %th First Name
-      %th Last Name
-      %th Gender
-      %th Email
-  %tbody
-    - @people.profiles.each do |person|
-      %tr
-        %td= person.first_name
-        %td= person.last_name
-        %td= person.gender
-        %td= person.email
+%p
+  %strong Name:
+  = @person.name
+%p
+  %strong Date of birth:
+  = @person.date_of_birth
+%p
+  %strong Phone number:
+  = @person.phone_number
+= link_to 'Edit', edit_person_path(@person)
+|
+= link_to 'Back', people_path

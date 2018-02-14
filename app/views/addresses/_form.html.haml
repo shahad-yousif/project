@@ -1,33 +1,25 @@
-= form_with(model: address, local: true) do |form|
-  - if address.errors.any?
-    #error_explanation
-      %h2
-        = pluralize(address.errors.count, "error")
-        prohibited this address from being saved:
-      %ul
-        - address.errors.full_messages.each do |message|
-          %li= message
+= form_for @address do |form|
 
   .row
-  .col-sm-6
-    .card
-      .card-body
-        .form-group.row
-          .col-sm-8
-            %input#text.form-control{:placeholder => "Country", :type => "name"}/
+    .col-sm-6
+      .card
+        .card-body
+          .form-group.row
+            .col-sm-8
+              = form.text_field :country, placeholder: "Country", class: 'form-control'
 
-        .form-group.row
-          .col-sm-8
-            %input#text.form-control{:placeholder => "City", :type => "name"}/
+          .form-group.row
+            .col-sm-8
+              = form.text_field :city, placeholder: "City", class: 'form-control'
 
-        .form-group.row
-          %label.col-sm-2.col-form-label{for: "text"} Person
-          .col-sm-10
-            = form.collection_select :person_id, Person.order(:name),:id,:name, class: "form-control", include_blank: true
+          .form-group.row
+            %label.col-sm-2.col-form-label{for: "text"} Person
+            .col-sm-10
+              = form.collection_select :person_id, Person.order(:name),:id,:name, class: "form-control", include_blank: true
 
-        .actions
-          = form.submit"create address", class:"btn btn-outline-secondary"
-          = link_to 'Back', addresses_path, class:"btn btn-outline-secondary"
+          .actions
+            = form.submit"create address", class:"btn btn-outline-secondary"
+            = link_to 'Back', addresses_path, class:"btn btn-outline-secondary"
 
 :javascript
   $('select').select2();          
