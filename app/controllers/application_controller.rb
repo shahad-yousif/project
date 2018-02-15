@@ -1,5 +1,6 @@
 class ApplicationController < ActionController::Base
   before_action :authenticate_user!
+  include ActionController::MimeResponds
   protect_from_forgery with: :exception
 
   after_action :flash_to_headers

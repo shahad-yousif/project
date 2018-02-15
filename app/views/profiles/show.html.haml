@@ -1,21 +1,29 @@
-
+%br
 %p
-  %strong First name:
-  = @profile.first_name
-%p
-  %strong Last name:
-  = @profile.last_name
-%p
-  %strong Gender:
-  = @profile.gender
-%p
-  %strong Email:
-  = @profile.email
-%p
-  %strong Person:
-  = @profile.person_id
-%p
-  %strong Status:
-  = @profile.active
-= link_to 'Edit', edit_profile_path(@profile), class:"btn btn-outline-secondary"
+  %a.btn.btn-primary{"aria-controls" => "multiCollapseExample1", "aria-expanded" => "false", "data-toggle" => "collapse", href: "#multiCollapseExample1", role: "button"} Show My Profile 
+.row
+  .col
+    #multiCollapseExample1.collapse.multi-collapse
+      .card.card-body
+        %p
+          %strong First name:
+          = @profile.first_name
+        %p
+          %strong Last name:
+          = @profile.last_name
+        %p
+          %strong Gender:
+          = @profile.gender
+        %p
+          %strong Email:
+          = @profile.email
+        %p
+          %strong Person:
+          = @profile.person.name
+        %p
+          %strong Status:
+          = @profile.active
+      %br    
+      = link_to 'Edit', edit_profile_path(@profile), class:"btn btn-outline-secondary"
+%br      
 = link_to 'Back', profiles_path, class:"btn btn-outline-secondary"

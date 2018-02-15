@@ -26,7 +26,7 @@
             = form.label :Gender
             %br
             .form-check.form-check-inline
-              %input#inlineCheckbox1.form-check-input{type: "checkbox", value: "option1"}/
+              = form.check_box :gender
               %label.form-check-label{for: "inlineCheckbox1"} Female
             .form-check.form-check-inline
               %input#inlineCheckbox2.form-check-input{type: "checkbox", value: "option2"}/
@@ -36,11 +36,13 @@
             = form.label :status
             %br
             .form-check.form-check-inline
-              %input#inlineCheckbox1.form-check-input{type: "checkbox", value: "option1"}/
+              = form.check_box :active
+              
               %label.form-check-label{for: "inlineCheckbox1"} Active
             .form-check.form-check-inline
               %input#inlineCheckbox2.form-check-input{type: "checkbox", value: "option2"}/
               %label.form-check-label{for: "inlineCheckbox2"} Inactive
+
           .actions
             = form.submit"create profile", class:"btn btn-outline-secondary"
             = link_to 'Back', profiles_path, class:"btn btn-outline-secondary"

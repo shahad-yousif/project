@@ -1,12 +1,17 @@
-%p
-  %strong Name:
-  = @person.name
-%p
-  %strong Date of birth:
-  = @person.date_of_birth
-%p
-  %strong Phone number:
-  = @person.phone_number
-= link_to 'Edit', edit_person_path(@person)
-|
-= link_to 'Back', people_path
+%br
+.row
+  .col-sm-6
+    .card
+      .card-body
+        %p
+          %strong Name:
+          = @person.name
+        %p
+          %strong Date of birth:
+          = @person.date_of_birth
+        %p
+          %strong Phone number:
+          = @person.phone_number
+%br          
+= link_to 'Edit', edit_person_path(@person), class:"btn btn-outline-secondary"
+= link_to 'Back', people_path, class:"btn btn-outline-secondary"

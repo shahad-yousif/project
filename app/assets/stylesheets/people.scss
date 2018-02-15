@@ -166,7 +166,7 @@ body
 }
 
 
-.overview button
+.overview  a
 {
   background-color: #ec1c23;
   color: #FFF;
@@ -174,7 +174,15 @@ body
   font-size: 20px;
   font-weight: bold;
   border: 1px solid #ec1c23;
+
 }
+
+.overview  a:hover
+{
+  background-color: #564b4b;
+  opacity: 0.5;
+}
+
 
 .footer
 {

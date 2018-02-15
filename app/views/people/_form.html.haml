@@ -1,12 +1,19 @@
 = form_for @person do |form|
-  .field
-    = form.label :name
-    = form.text_field :name, id: :person_name
-  .field
-    = form.label :date_of_birth
-    = form.text_field :date_of_birth, id: :person_date_of_birth
-  .field
-    = form.label :phone_number
-    = form.text_field :phone_number, id: :person_phone_number
-  .actions
-    = form.submit
+
+  .row
+    .col-sm-6
+      .card
+        .card-body
+          .form-group.row
+            .col-sm-8
+              .form-group.row
+                .col-sm-8
+                  = form.text_field :name, id: :person_name, placeholder: "Name", class: 'form-control'
+              .form-group.row
+                .col-sm-8
+                  = form.text_field :date_of_birth, id: :person_date_of_birth, placeholder: "Date Of Birth", class: 'form-control'
+              .form-group.row
+                .col-sm-8
+                  = form.text_field :phone_number, id: :person_phone_number, placeholder: "Phone Number", class: 'form-control'
+              .actions
+                = form.submit"create person", class:"btn btn-outline-secondary"

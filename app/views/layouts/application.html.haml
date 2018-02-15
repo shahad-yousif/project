@@ -11,17 +11,7 @@
     
     .container
       %nav.navbar.navbar-expand-lg.navbar-custom
-        - if user_signed_in?
-          Logged in as
-          = succeed "." do
-            %strong= current_user.email
-          = link_to 'Edit profile', edit_user_registration_path
-          |
-          \#{link_to "Logout", destroy_user_session_path, method: :delete}
-        - else
-          = link_to "Sign up", new_user_registration_path
-          |
-          \#{link_to "Login", new_user_session_path}
+
         %ul.navbar-nav.ml-auto
           %button.navbar-toggler{"aria-controls" => "navbarSupportedContent", "aria-expanded" => "false", "aria-label" => "Toggle navigation", "data-target" => "#navbarSupportedContent", "data-toggle" => "collapse", :type => "button"}
             %span.navbar-toggler-icon
@@ -44,6 +34,27 @@
                   %a.dropdown-item{{:href => profiles_path}} Profile
                   .dropdown-divider
                   %a.dropdown-item{{:href => addresses_path}} Adress
+
+
+              .collapse.navbar-collapse#bs-example-navbar-collapse-1
+                %li.nav-item.dropdown
+                  - if current_user
+                    -# - unless Rails.env.production?
+                    -#   %li{class: 'active'}= link_to Rails.env.titleize, '#'
+                    %li.dropdown
+                      %a#navbarDropdown.nav-link.dropdown-toggle{"aria-expanded" => "false", "aria-haspopup" => "true", "data-toggle" => "dropdown", :href => "#", :role => "button"}
+                        = current_user.name
+                        -# %span.caret
+                      %ul.dropdown-menu#logout
+                        %li.dropdown-item= link_to 'Sign out', destroy_user_session_path, method: :delete, id: 'nav-a'
+                    .modal-mask
+                      .modal
+                        %strong Your online session is about to expire
+                        %br
+                        %button.modal-btn I'm still here!
+                  - else
+                    %li.active#nav-li= link_to 'Sign in', user_azure_oauth2_omniauth_authorize_path                  
+                        
 
 
       #flash_hook

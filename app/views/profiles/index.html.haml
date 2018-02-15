@@ -20,7 +20,7 @@
             %td= profile.last_name
             %td= profile.gender
             %td= profile.email
-            %td= profile.person_id
+            %td= profile.person.name
             %td
               - if profile.active
                 %input{checked: 'checked',class: 'profile_check', id: profile.id, data: { toggle: 'toggle', off: 'deactivated', on: 'activated'}, onclick: "change_status(#profile.id)", type: 'checkbox'}

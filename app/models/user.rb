@@ -1,8 +1,22 @@
 class User < ApplicationRecord
-  # Include default devise modules. Others available are:
-  # :confirmable, :lockable, :timeoutable and :omniauthable
-  devise :database_authenticatable, :registerable,
-         :recoverable, :rememberable, :trackable, :validatable
+  devise :database_authenticatable, :timeoutable
+  devise :omniauthable, omniauth_providers: [:azure_oauth2]
 
-  has_one :person       
+  def self.from_omniauth(auth)
+    user = find_by_email(auth.info.email)
+    if user
+        user.update(timeout: (auth.credentials.expires_at - Time.now.to_i)/60)
+    else
+      user = self.new
+      user.email = auth.info.email
+      user.name = auth.info.name
+      user.timeout = (auth.credentials.expires_at - Time.now.to_i)/60
+      user.save!
+    end
+    user
+  end
+
+  def timeout_in
+    timeout.minutes
+  end
 end

@@ -72,4 +72,3 @@ class AddressesController < ApplicationController
       params.require(:address).permit(:country, :city, :person_id)
     end
 end
-
