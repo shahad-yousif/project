@@ -22,26 +22,19 @@
             .col-sm-10
               = form.collection_select :person_id, Person.order(:name),:id,:name, class: "form-control", include_blank: true
 
-          .form-group
-            = form.label :Gender
-            %br
-            .form-check.form-check-inline
-              = form.check_box :gender
-              %label.form-check-label{for: "inlineCheckbox1"} Female
-            .form-check.form-check-inline
-              %input#inlineCheckbox2.form-check-input{type: "checkbox", value: "option2"}/
-              %label.form-check-label{for: "inlineCheckbox2"} Male
+          .form-group.row
+            %label.col-sm-2.col-form-label{for: "text"} Gender
+            .col-sm-10
+              = form.select :gender,['Male', 'Female'], class:"btn btn-secondary dropdown-toggle", include_blank: true
 
-          .form-group
-            = form.label :status
-            %br
-            .form-check.form-check-inline
-              = form.check_box :active
-              
-              %label.form-check-label{for: "inlineCheckbox1"} Active
-            .form-check.form-check-inline
-              %input#inlineCheckbox2.form-check-input{type: "checkbox", value: "option2"}/
-              %label.form-check-label{for: "inlineCheckbox2"} Inactive
+          .form-group.row
+            %label.col-sm-2.col-form-label{for: "text"} Status
+            .col-sm-10
+              .radio
+                = form.radio_button :active,true
+                Active
+                = form.radio_button :active,false
+                Inactive
 
           .actions
             = form.submit"create profile", class:"btn btn-outline-secondary"

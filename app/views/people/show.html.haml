@@ -3,6 +3,10 @@
   .col-sm-6
     .card
       .card-body
+        %h5.mb-0
+          %a{ class:"btn btn-secondary","aria-controls" => "collapseOne", "aria-expanded" => "false", "data-parent" => "#accordion", "data-toggle" => "collapse", :href => "#collapseOne"}
+            Address
+            %span.badge.badge-pill.badge-light= @person.addresses.count
         %p
           %strong Name:
           = @person.name

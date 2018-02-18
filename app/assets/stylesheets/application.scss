@@ -30,6 +30,12 @@
 .navbar-custom {
     background-color: #08526d;
 }
+
+.navbar.navbar-expand-lg.navbar-custom a:link
+{
+  color: #FFF;
+}
+
 /* change the brand and text color */
 .navbar-custom .navbar-brand,
 .navbar-custom .navbar-text {
@@ -57,11 +63,22 @@
 
 .navbar-expand-lg .navbar-nav .dropdown-menu
 {
-  background-color: #212529;
+  background-color: #08526d;
   border: 3px solid #ec1c23;
   padding: 6px 20px;
   min-width: 200px;
 
+}
+
+.navbar-expand-lg .navbar-nav .dropdown-menu a:link
+{
+  text-decoration:none;
+  
+}
+
+.nav-item.dropdown .dropdown-item a
+{
+ color: #FFF; 
 }
 
 .navbar-expand-lg .navbar-nav .dropdown-menu .dropdown-item

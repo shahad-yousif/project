@@ -1,23 +1,19 @@
-%br
-
-%button.btn.btn-primary{type: "button"}
-  = @address.person.name
-  %span has 
-  %span.badge.badge-light 9 
-  %span Address
-  %span.sr-only unread messages
 
 %br
-
-%p
-  %strong Country:
-  = @address.country
-%p
-  %strong City:
-  = @address.city
-%p
-  %strong Person:
-  = @address.person.name
+.row
+  .col-sm-6
+    .card
+      .card-body
+        %p
+          %strong Country:
+          = @address.country
+        %p
+          %strong City:
+          = @address.city
+        %p
+          %strong Person:
+          = @address.person.name
+%br          
 
 = link_to 'Edit', edit_address_path(@address), class:"btn btn-outline-secondary"
 = link_to 'Back', addresses_path, class:"btn btn-outline-secondary"
