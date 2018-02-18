@@ -10,7 +10,7 @@
   %body
     
     
-    %nav.navbar.navbar-expand-lg.navbar-custom
+    %nav.navbar.navbar-expand-lg.navbar-custom.justify-content-center
 
       %ul.navbar-nav
         %button.navbar-toggler{"aria-controls" => "navbarSupportedContent", "aria-expanded" => "false", "aria-label" => "Toggle navigation", "data-target" => "#navbarSupportedContent", "data-toggle" => "collapse", :type => "button"}
@@ -45,7 +45,7 @@
                       %br
                       %button.modal-btn I'm still here!
                 - else
-                  %li.active#nav-li= link_to 'Sign in', user_azure_oauth2_omniauth_authorize_path                  
+                  %li.active#nav-li= link_to 'Sign in', user_azure_oauth2_omniauth_authorize_path                 
                       
 
     .container

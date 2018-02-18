@@ -13,10 +13,10 @@
         %p
           %strong Person:
           = @address.person.name
-%br          
+        %br          
 
-= link_to 'Edit', edit_address_path(@address), class:"btn btn-outline-secondary"
-= link_to 'Back', addresses_path, class:"btn btn-outline-secondary"
+        = link_to 'Edit', edit_address_path(@address), class:"btn btn-outline-secondary"
+        = link_to 'Back', addresses_path, class:"btn btn-outline-secondary"
 
 
 

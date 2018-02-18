@@ -3,7 +3,7 @@
   .col-sm-6
     .card
       .card-body
-        %h5.mb-0
+        %p
           %a{ class:"btn btn-secondary","aria-controls" => "collapseOne", "aria-expanded" => "false", "data-parent" => "#accordion", "data-toggle" => "collapse", :href => "#collapseOne"}
             Address
             %span.badge.badge-pill.badge-light= @person.addresses.count
@@ -16,6 +16,6 @@
         %p
           %strong Phone number:
           = @person.phone_number
-%br          
-= link_to 'Edit', edit_person_path(@person), class:"btn btn-outline-secondary"
-= link_to 'Back', people_path, class:"btn btn-outline-secondary"
+        %br          
+        = link_to 'Edit', edit_person_path(@person), class:"btn btn-outline-secondary"
+        = link_to 'Back', people_path, class:"btn btn-outline-secondary"
