@@ -73,6 +73,8 @@
 .navbar-expand-lg .navbar-nav .dropdown-menu a:link
 {
   text-decoration:none;
+  color:#ec1c23;
+  font-weight: bold; 
   
 }
 
@@ -80,43 +82,25 @@
 
 .navbar-expand-lg .navbar-nav .dropdown-menu a:hover
 {
+ webkit-transition: padding 0.1s ease;
+  moz-transition: padding 0.1s ease;
+  o-transition: padding 0.1s ease;
+  transition: padding 0.1s ease;
 
-  background-color: #ec1c23;
    
 }
 
- .dropdown .dropdown-menu .dropdown-item
-{
 
- webkit-transition: padding 0.2s ease;
-  moz-transition: padding 0.2s ease;
-  o-transition: padding 0.2s ease;
-  transition: padding 0.2s ease; 
-}
 
  .dropdown .dropdown-menu a:hover
 {
   
-  background-color: #ec1c23;
-  border-color: #ec1c23;
   padding-left: 30px;
   
 }
 
 .dropdown-links a {
   color: #FFF;
-}
-
-.nav-item.dropdown #nav-li a:link
-{
-  color: #FFF;
-}
-
-
-
-.nav-item.dropdown.active#nav-li > li > a
-{
-  font-weight: bold;
 }
 
 
